@@ -1,0 +1,67 @@
+.admin{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin > .pageTitle{
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px 0px 10px 0px;
+    background-color: white;
+    height: 8vh;
+}
+
+.admin > .input__container{
+    display: inherit;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.admin > .input__container > input {
+    border-radius: 10px;
+    border: none;
+    color: #748185;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.admin__body{
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+}
+
+.admin__bodySidebar{
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px lightgray;
+    padding-right: 10px;
+    /* height: fit-content; */
+    align-items: center;
+}
+
+.admin__bodySidebar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.admin__bodySidebar > div:hover{
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.admin__bodyContent{
+    height: 60vh;
+    overflow-y: scroll;
+    margin-left: 10px;
+    padding-left: 5px;
+    flex: 1;
+}

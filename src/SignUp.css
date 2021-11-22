@@ -1,0 +1,48 @@
+.signUp__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3{
+    color: #748185;
+}
+
+.signUp__container > form > .input{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    /* border:1px solid red; */
+}
+
+.input > h5 {
+    margin-right: 15px;
+    color: #748185;
+}
+
+.input > input{
+    outline: 1px black;
+    flex: 1;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.input__button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.input__button > .register__button{
+    width: 60%;
+    color: #748185;
+    /* height: 25px; */
+    text-align: center;
+}
+
+.input__button > .register__button:hover{
+    cursor: pointer;
+}

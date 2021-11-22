@@ -1,0 +1,9 @@
+background color - #de9f8e
+<li onClick={()=>navigate('/')}>Home</li>
+                        <li onClick={()=>navigate('/physical-books')}>Physical Books</li>
+                        <li onClick={()=>navigate('/e-books')}>E-Books</li>
+                        <li onClick={()=>navigate('/all-books')}>All books</li>
+                        <li onClick={()=>navigate('/profile')}>Profile</li>
+
+
+https://p.kindpng.com/picc/s/24-248253_user-profile-default-image-png-clipart-png-download.png

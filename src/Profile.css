@@ -1,0 +1,43 @@
+.profile{
+    background-color:white;
+    display: flex;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+
+.profile__imageContainer{
+    display: flex;
+    flex: 0.30;
+    margin-right: 50px;
+    border: lightgrey;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.profile__imageContainer>img{
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.profile__details{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex: 0.6;
+}
+
+.profile__details>.profile__userDetails, .profile__bookDetails{
+    margin-bottom: 10px;
+    border: solid 1px lightgrey;
+    padding: 10px;
+}
+
+.profile__bookDetails > h4{
+    margin-top: 10px;
+}

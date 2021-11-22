@@ -1,0 +1,52 @@
+.ebook{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    /* border: solid 1px lightgray; */
+}
+
+/* .ebook > .ebook_imageContainer{
+
+} */
+.ebook > .ebook__info{
+    background-color: white;
+    flex: 0.8;
+    padding-left: 5px;
+}
+
+.ebook__info>h4{
+    color: #748185;
+}
+
+.ebook__info > button{
+    width: 20%;
+    color: #5f7379;
+    margin: 10px auto 10px auto;
+}
+.ebook__info > button:hover{
+    cursor: pointer;
+}
+
+.ebook__info > .datepicker__invisible>{
+    display: none !important;
+    visibility: hidden;
+}
+
+.ebook__info > .datepicker__visible{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.ebook__info > .datepicker__visible > button{
+    width: 20%;
+    color: #5f7379;
+    margin: 10px auto 5px auto;
+}
+
+.ebook__info > .datepicker__visible > button:hover{
+    cursor: pointer;
+}
