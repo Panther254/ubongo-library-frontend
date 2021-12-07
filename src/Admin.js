@@ -20,6 +20,7 @@ export const Admin = () => {
                     <div onClick={()=>(navigate('borrowed-books'))}><h4>Borrowed Books</h4></div>
                     <div onClick={()=>(navigate('defaulted-books'))}><h4>Defaulted Books</h4></div>
                     <div onClick={()=>(navigate('admin-profile'))}><h4>Profile</h4></div>
+                    <div onClick={()=>(navigate('book-return'))}><h4>Book Return</h4></div>
                 </div>
                 <div className="admin__bodyContent">
                     <Outlet/>

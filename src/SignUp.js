@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import './SignUp.css';
 
@@ -8,8 +9,9 @@ export const SignUp = () => {
     const [email, setEmail] = useState("")
     const [password1, setPassword1] = useState("")
     const [password2, setPassword2] = useState("")
+    const navigate = useNavigate()
 
-    const validate = ({firstName, secondName, email, password1, password2}) => {
+    const validate = ({firstName, secondName, email, password, password2}) => {
         if(!firstName){
             toast.warn("First Name is Required")
             return false
@@ -19,10 +21,10 @@ export const SignUp = () => {
         }else if(!email){
             toast.warn("Email is Required")
             return false
-        }else if(!password1){
+        }else if(!password){
             toast.warn("Password required")
             return false
-        }else if(password1 !== password2){
+        }else if(password !== password2){
             toast.warn("The passwords do not match")
             setPassword1("")
             setPassword2("")
@@ -43,14 +45,25 @@ export const SignUp = () => {
             firstName: firstName,
             lastName: secondName,
             email: email,
-            password1: password1,
+            password: password1,
             password2: password2,
         }
         const isValid = validate(formDetails)
-        if(isValid){
+        if(!isValid){
             // Do some fetch actions
+            // javascript object notation(json)
             console.log(formDetails)
-            fetch
+            fetch('/api/auth/signup/',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formDetails),
+            }).then(response=>(response.json()))
+            .then(data=>{
+                console.log("data>>>",data)
+                navigate('/')
+            })
         }
     }
 

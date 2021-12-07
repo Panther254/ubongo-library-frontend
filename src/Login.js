@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import './Login.css';
+import { useStateValue } from "./DataStore";
+import { actionTypes } from './reducer';
 
 export const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    const navigate = useNavigate()
+    const [,dispatch] = useStateValue()
+    
     const validate = ({email, password}) => {
         if(!email){
             toast.warn("Email is Required")
@@ -27,10 +31,29 @@ export const Login = () => {
         }
         const isValid = validate(formDetails)
         if(isValid){
-            // Do some fetch actions
             console.log(formDetails)
-        }
-    }
+            fetch('/api/auth/signin',{
+                method: 'POST',
+                headers:{
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(formDetails)
+            }).then(response=>{
+                if(response.status===200){
+                    response.json().then(data=>{
+                        alert(data.message)
+                        dispatch({
+                            type: actionTypes.SET_USER,
+                            user: data.user
+                        })
+                     const isAdmin = data.user.roles.some(role=>role.name==="admin")
+                     isAdmin?navigate("/admin"):navigate("/home")
+                    })
+                }else{
+                    response.json().then(data=>alert(data.message))
+                }
+            })
+    }}
 
     return (
         <div className="signIn">
@@ -60,4 +83,4 @@ export const Login = () => {
             </div>    
         </div>
     )
-}
+    }

@@ -10,6 +10,7 @@ import { Books } from './Books.js'
 import { Profile } from './Profile.js'
 import { Admin } from './Admin';
 import { AddBook } from './AddBook'
+import {BookReturn } from './BookReturn'
 
 
 function App() {
@@ -26,9 +27,9 @@ function App() {
               <Route path="add-book" element={<AddBook/>}/>
               <Route path="borrowed-books" element={<Books borrowed={true}/>}/>
               <Route path="defaulted-books" element={<Books defaulted={true}/>}/>
-              <Route path="admin-profile" element={<Profile/>}/>             
+              <Route path="admin-profile" element={<Profile/>}/>
+              <Route path="book-return" element={<BookReturn/>}/>          
             </Route>
-            <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<SignUp/>}/>
             <Route path="/password-reset" element={<ResetPassword/>}/>
             <Route path="/home" element={<Home/>}>
@@ -44,6 +45,7 @@ function App() {
               <Route path="books/chemistry" element={<Books category="chemistry"/>}/>
               <Route path="books/:bookID" element={<PhysicalBooks/>}/>
             </Route>
+            <Route path="/" element={<Login/>}/>
           </Routes>
         </Router>
       </div>
