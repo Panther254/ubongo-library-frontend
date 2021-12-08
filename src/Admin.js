@@ -11,7 +11,7 @@ export const Admin = () => {
             <div className="pageTitle"><h2>Admin Dashboard</h2></div>
             <div className="input__container">
                 <input type="text" placeholder="Search..." value={value} onChange={(e)=>(setValue(e.target.value))}/>
-                <span><i className="fa fa-search"></i></span>
+                <span onClick={navigate(`books/adminbooks-result/${value}`)}><i className="fa fa-search"></i></span>
             </div>
             <div className="admin__body">
                 <div className="admin__bodySidebar">

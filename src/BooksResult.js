@@ -1,11 +1,13 @@
 import React,{ useState, useEffect} from 'react'
 import { Book } from './Book'
+import { useParams } from 'react-router'
 import './BooksResult.css'
 
 
 
-export const BooksResult = ({searchParam}) => {
+export const BooksResult = () => {
 	const [books, setBooks] = useState([])
+	const { searchParam } = useParams()
 
 	useEffect(() => {
 		fetch(`/api/books/search?queryString=${searchParam}`).then(response=>response.json())

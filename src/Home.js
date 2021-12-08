@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { Link, Outlet, useNavigate} from 'react-router-dom';
 import './Home.css';
 
@@ -6,12 +6,14 @@ import './Home.css';
 
 export const Home = () => {
     const navigate = useNavigate()
+    const [value, setValue] = useState("")
 
     return (
         <div className="home">
             <div className="home__container">
                 <div className="home__searchContainer">
-                    <input type="search" placeholder="Search..." />
+                    <input type="search" placeholder="Search..." value={value} onChange={(e)=>(setValue(e.target.value))}/>
+                    <span onClick={navigate(`books/books-result/${value}`)}><i className="fa fa-search"></i></span>
                 </div>
                 <div className="home__navigationBar">
                     <ul>
