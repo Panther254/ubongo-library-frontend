@@ -11,6 +11,7 @@ import { Profile } from './Profile.js'
 import { Admin } from './Admin';
 import { AddBook } from './AddBook'
 import {BookReturn } from './BookReturn'
+import {BooksResult } from './BooksResult'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               <Route path="books/physics" element={<Books category="physics"/>}/>
               <Route path="books/chemistry" element={<Books category="chemistry"/>}/>
               <Route path="books/:bookID" element={<PhysicalBooks/>}/>
+              <Route path="books/books-result" element={<BooksResult/>}/>
             </Route>
             <Route path="/" element={<Login/>}/>
           </Routes>
