@@ -13,7 +13,7 @@ export const Home = () => {
             <div className="home__container">
                 <div className="home__searchContainer">
                     <input type="search" placeholder="Search..." value={value} onChange={(e)=>(setValue(e.target.value))}/>
-                    <span onClick={navigate(`books/books-result/${value}`)}><i className="fa fa-search"></i></span>
+                    <span onClick={()=>navigate(`search-book-result/${value}`)}><i className="fa fa-search"></i></span>
                 </div>
                 <div className="home__navigationBar">
                     <ul>

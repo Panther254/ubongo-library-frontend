@@ -27,10 +27,10 @@ function App() {
               <Route path="list-books" element={<Books/>}/>
               <Route path="add-book" element={<AddBook/>}/>
               <Route path="borrowed-books" element={<Books borrowed={true}/>}/>
+              <Route path="admin-search-book-result/:searchParam" element={<BooksResult/>}/> 
               <Route path="defaulted-books" element={<Books defaulted={true}/>}/>
               <Route path="admin-profile" element={<Profile/>}/>
               <Route path="book-return" element={<BookReturn/>}/> 
-              <Route path="books/adminbooks-result/:searchParam" element={<BooksResult/>}/>         
             </Route>
             <Route path="/register" element={<SignUp/>}/>
             <Route path="/password-reset" element={<ResetPassword/>}/>
@@ -40,13 +40,13 @@ function App() {
               <Route path="e-books" element={<Ebooks/>}/>
               <Route path="all-books" element={<Books/>}/>
               <Route path="physical-books" element={<PhysicalBooks/>}/>
+              <Route path="search-book-result/:searchParam" element={<BooksResult/>}/>
               <Route path="books/engineering" element={<Books category="engineering"/>}/>
               <Route path="books/mathematics" element={<Books category="mathematics"/>}/>
               <Route path="books/history" element={<Books category="history"/>}/>
               <Route path="books/physics" element={<Books category="physics"/>}/>
               <Route path="books/chemistry" element={<Books category="chemistry"/>}/>
               <Route path="books/:bookID" element={<PhysicalBooks/>}/>
-              <Route path="books/books-result/:searchParam" element={<BooksResult/>}/>
             </Route>
             <Route path="/" element={<Login/>}/>
           </Routes>

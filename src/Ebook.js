@@ -26,8 +26,13 @@ export const Ebook = ({ physical, bookID}) => {
             body: JSON.stringify({ book:book._id })
         }).then(response=>response.json())
         .then(data=>{
-            alert(`Request Granted!. Book ID ${data.book}`)
-            
+            console.log(data)
+           const {message,book} = data
+           if(message){
+            alert(message)
+           }else if(book){
+            alert(`Request for ${book.title} Granted.`)
+           }  
         })
     }
     
